@@ -34,6 +34,6 @@ I build clean, responsive web interfaces — turning designs into fast, accessib
 
 <img height="165" alt="Nihal Puse's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=Nihalpuse&show_icons=true&hide_border=true&theme=tokyonight&icon_color=2dd4bf&title_color=6366f1&text_color=9aa4b2&bg_color=0d1117" />
 &nbsp;
-<img height="165" alt="Nihal Puse's most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nihalpuse&layout=compact&hide_border=true&theme=tokyonight&title_color=6366f1&text_color=9aa4b2&bg_color=0d1117" />
+<img height="165" alt="Nihal Puse's most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nihalpuse&layout=compact&langs_count=8&hide=jupyter%20notebook&hide_border=true&theme=tokyonight&title_color=6366f1&text_color=9aa4b2&bg_color=0d1117" />
 
 </div>
