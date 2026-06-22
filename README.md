@@ -64,10 +64,10 @@ I build clean, responsive web interfaces — turning designs into fast, accessib
 
 **Like what you see? Let's connect.**
 
-[![LinkedIn](https://img.shields.io/badge/-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nihal-puse/)
+<a href="https://www.linkedin.com/in/nihal-puse/"><img src="https://skillicons.dev/icons?i=linkedin" height="38" alt="LinkedIn" /></a>
 &nbsp;
-[![Email](https://img.shields.io/badge/-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:nihalpuse44@gmail.com)
+<a href="mailto:nihalpuse44@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" height="38" alt="Email" /></a>
 &nbsp;
-[![GitHub](https://img.shields.io/badge/-181717?style=flat&logo=github&logoColor=white)](https://github.com/Nihalpuse)
+<a href="https://github.com/Nihalpuse"><img src="https://skillicons.dev/icons?i=github" height="38" alt="GitHub" /></a>
 
 </div>
