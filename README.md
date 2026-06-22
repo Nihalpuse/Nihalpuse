@@ -48,10 +48,6 @@ I build clean, responsive web interfaces — turning designs into fast, accessib
   <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,nodejs,python,flask,git,github&theme=dark" alt="TypeScript, JavaScript, React, Next.js, Tailwind, Node.js, Python, Flask, Git, GitHub" />
 </p>
 
-### 🛠️ Currently building
-
-**[gaming-super-app](https://github.com/Nihalpuse/gaming-super-app)** — a real-money gaming super app built in Next.js &amp; TypeScript: two distinct products, an isolated dual wallet, and calm realtime surfaces, all in one responsive web app.
-
 ### 📊 GitHub at a glance
 
 <div align="center">
