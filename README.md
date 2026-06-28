@@ -91,8 +91,6 @@ Platform for households to collaboratively decide daily meals — AI recommendat
 
 <div align="center">
 
-<img src="./assets/signature.svg" alt="Nihal Puse — signature" width="420" />
-
 **Like what you see? Let's connect.**
 
 <a href="https://www.linkedin.com/in/nihal-puse/"><img src="https://skillicons.dev/icons?i=linkedin" height="38" alt="LinkedIn" /></a>
