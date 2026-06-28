@@ -2,7 +2,7 @@
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b0f1a"/>
-      <stop offset="1" stop-color="#11161f"/>
+      <stop offset="1" stop-color="#10151f"/>
     </linearGradient>
 
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
@@ -10,9 +10,14 @@
       <stop offset="1" stop-color="#2dd4bf"/>
     </linearGradient>
 
-    <radialGradient id="glow" cx="50%" cy="30%" r="62%">
-      <stop offset="0" stop-color="#6366f1" stop-opacity="0.22"/>
+    <!-- two-tone mesh glows -->
+    <radialGradient id="meshA" cx="22%" cy="18%" r="55%">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.28"/>
       <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="meshB" cx="82%" cy="88%" r="55%">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
     </radialGradient>
 
     <!-- soft highlight band that glides across the name -->
@@ -26,6 +31,11 @@
         values="-1 0; 1 0; -1 0" dur="8s" repeatCount="indefinite"/>
     </linearGradient>
 
+    <!-- faint dot-grid texture -->
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#5b6b8c" opacity="0.10"/>
+    </pattern>
+
     <clipPath id="frame">
       <rect x="0" y="0" width="1280" height="320" rx="18"/>
     </clipPath>
@@ -36,53 +46,72 @@
 
   <g clip-path="url(#frame)">
 
-    <!-- breathing glow -->
-    <rect x="0" y="0" width="1280" height="320" fill="url(#glow)">
-      <animate attributeName="opacity" values="0.65;1;0.65" dur="8s" repeatCount="indefinite"/>
+    <!-- texture + mesh glows -->
+    <rect x="0" y="0" width="1280" height="320" fill="url(#dots)"/>
+    <rect x="0" y="0" width="1280" height="320" fill="url(#meshA)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="9s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="1280" height="320" fill="url(#meshB)">
+      <animate attributeName="opacity" values="1;0.65;1" dur="11s" repeatCount="indefinite"/>
     </rect>
 
     <!-- thin accent hairline that draws across the top -->
     <path d="M0 2 H1280" stroke="url(#accent)" stroke-width="2" fill="none" opacity="0.5"
           stroke-dasharray="1280" stroke-dashoffset="1280">
-      <animate attributeName="stroke-dashoffset" values="1280;0;0;1280" keyTimes="0;0.4;0.8;1" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" values="1280;0;0;1280" keyTimes="0;0.4;0.8;1" dur="12s" repeatCount="indefinite"/>
     </path>
 
     <!-- editorial corner ticks (gentle pulse) -->
     <g stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7">
       <animate attributeName="opacity" values="0.45;0.8;0.45" dur="6s" repeatCount="indefinite"/>
-      <path d="M40 36 H92 M40 36 V88"/>
-      <path d="M1240 36 H1188 M1240 36 V88"/>
-      <path d="M40 284 H92 M40 284 V232"/>
-      <path d="M1240 284 H1188 M1240 284 V232"/>
+      <path d="M40 34 H92 M40 34 V86"/>
+      <path d="M1240 34 H1188 M1240 34 V86"/>
+      <path d="M40 286 H92 M40 286 V234"/>
+      <path d="M1240 286 H1188 M1240 286 V234"/>
     </g>
 
-    <!-- faint dev-glyph echoes (slow float) -->
-    <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" text-anchor="middle">
-      <text x="196" y="200" font-size="120" fill="#2dd4bf" opacity="0.05">&lt;/&gt;
-        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -7; 0 0" dur="9s" repeatCount="indefinite"/>
-      </text>
-      <text x="1084" y="200" font-size="120" fill="#6366f1" opacity="0.06">{ }
-        <animateTransform attributeName="transform" type="translate" values="0 0; 0 7; 0 0" dur="10s" repeatCount="indefinite"/>
-      </text>
+    <!-- status pill -->
+    <g>
+      <rect x="514" y="46" width="252" height="30" rx="15" fill="#ffffff" fill-opacity="0.03" stroke="#2dd4bf" stroke-opacity="0.35" stroke-width="1"/>
+      <!-- pulsing halo + dot -->
+      <circle cx="548" cy="61" r="4" fill="none" stroke="#2dd4bf" stroke-width="1.5" opacity="0.7">
+        <animate attributeName="r" values="3;9;3" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="548" cy="61" r="3.4" fill="#2dd4bf"/>
+      <text x="574" y="66" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="2.5" fill="#cbd5e1">FULL-STACK ENGINEER</text>
     </g>
 
     <!-- name with sweeping sheen -->
-    <text x="640" y="146" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="76" font-weight="700" fill="url(#nameSheen)" letter-spacing="1">Nihal Puse</text>
+    <text x="640" y="158" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="80" font-weight="700" fill="url(#nameSheen)" letter-spacing="1">Nihal Puse</text>
 
     <!-- animated divider -->
-    <rect x="606" y="174" width="68" height="4" rx="2" fill="url(#accent)">
+    <rect x="606" y="184" width="68" height="4" rx="2" fill="url(#accent)">
       <animate attributeName="width" values="68;108;68" dur="5s" repeatCount="indefinite"/>
       <animate attributeName="x" values="606;586;606" dur="5s" repeatCount="indefinite"/>
     </rect>
 
     <!-- role -->
-    <text x="640" y="218" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="6" fill="#9aa4b2">FULL-STACK SOFTWARE ENGINEER</text>
+    <text x="640" y="222" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="6" fill="#9aa4b2">FULL-STACK SOFTWARE ENGINEER</text>
 
-    <!-- tech line -->
-    <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="2" text-anchor="middle">
-      <text x="640" y="252" fill="#6b7585">Python
-        <tspan fill="#2dd4bf" dx="2" dy="0">·</tspan><tspan fill="#6b7585" dx="2">TypeScript</tspan><tspan fill="#2dd4bf" dx="2">·</tspan><tspan fill="#6b7585" dx="2">Next.js</tspan>
-      </text>
+    <!-- tech pills -->
+    <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="500" letter-spacing="0.5" fill="#aeb8c7" text-anchor="middle">
+      <g>
+        <rect x="437" y="244" width="76" height="30" rx="15" fill="#ffffff" fill-opacity="0.03" stroke="url(#accent)" stroke-opacity="0.30" stroke-width="1"/>
+        <text x="475" y="264">Python</text>
+      </g>
+      <g>
+        <rect x="525" y="244" width="106" height="30" rx="15" fill="#ffffff" fill-opacity="0.03" stroke="url(#accent)" stroke-opacity="0.30" stroke-width="1"/>
+        <text x="578" y="264">TypeScript</text>
+      </g>
+      <g>
+        <rect x="643" y="244" width="80" height="30" rx="15" fill="#ffffff" fill-opacity="0.03" stroke="url(#accent)" stroke-opacity="0.30" stroke-width="1"/>
+        <text x="683" y="264">Next.js</text>
+      </g>
+      <g>
+        <rect x="735" y="244" width="108" height="30" rx="15" fill="#ffffff" fill-opacity="0.03" stroke="url(#accent)" stroke-opacity="0.30" stroke-width="1"/>
+        <text x="789" y="264">PostgreSQL</text>
+      </g>
     </g>
 
   </g>
